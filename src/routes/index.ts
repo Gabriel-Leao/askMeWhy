@@ -3,5 +3,5 @@ import { Router } from 'express'
 export const routes = Router()
 
 routes.get('/', (req, res) => {
-  res.send('Hello, World!')
+  res.render('home/index')
 })
