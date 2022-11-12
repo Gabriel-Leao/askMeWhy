@@ -1,0 +1,24 @@
+body {
+  background-color: #eceff1;
+}
+
+.card {
+  margin-top: 5vh;
+}
+
+a {
+  size: 2em;
+}
+
+#navbar {
+  background-color: #a7cdcc;
+}
+
+#navbar a {
+  margin-left: 2vw;
+}
+
+#navbar p {
+  border: 1px solid #fff;
+  padding: 2px 4px;
+}

@@ -1,0 +1,24 @@
+<%- include('../../partials/header/index'); %>
+<body>
+  <%- include('../../partials/navbar/index'); %>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h1>Perguntar</h1>
+      </div>
+
+      <div class="card-body">
+        <form action="/send/question" method="POST">
+          <label for="title" class="py-2">Título</label>
+          <input type="text"  placeholder="título" class="form-control" id="title" name="title">
+    
+          <label for="description" class="py-2">Descrição</label>
+          <textarea placeholder="Descreva a pergunta"  class="form-control" id="description" name="description"></textarea>
+    
+          <button class="btn btn-primary my-2">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('../../partials/footer/index'); %>
