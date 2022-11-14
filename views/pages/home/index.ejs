@@ -1,6 +1,24 @@
 <%- include('../../partials/header/index'); %>
 <body>
   <%- include('../../partials/navbar/index'); %>
-  <h1>Home</h1>
+  
+  <div class="container">
+    <div class="py-2" id="home-title">
+      <h1>Perguntas</h1>
+      <a href="/ask" class="btn btn-primary px-4">Perguntar</a>
+    </div>
+    <hr>
+  
+    <% questions.forEach((question) => { %>
+      <div class="card">
+        <div class="card-body">
+          <h3><%= question.title %></h3>
+        </div>
+        <div class="card-footer">
+          <a href="/question/<%= question.id %>"><button class="btn btn-primary">Responder</button></a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
 </body>
 <%- include('../../partials/footer/index'); %>

@@ -19,6 +19,17 @@ a {
 }
 
 #navbar p {
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   padding: 2px 4px;
+  text-align: center;
+}
+
+#home-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#send-question-btn {
+  width: 100%;
 }

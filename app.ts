@@ -1,8 +1,18 @@
 import express from 'express'
-import { routes } from './routes/index'
 import bodyParser from 'body-parser'
+import { connection } from './controllers/connection'
+import { routes } from './routes'
 
 const app = express()
+
+connection
+  .authenticate()
+  .then(() => {
+    console.log('The connection to the database was successful')
+  })
+  .catch((error: Error) => {
+    console.log(error.name)
+  })
 
 app.set('view engine', 'ejs')
 
