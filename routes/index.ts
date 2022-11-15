@@ -23,13 +23,27 @@ routes.post('/send/question', (req, res) => {
   }).then(() => res.redirect('/'))
 })
 
+interface Iquestion {
+  title: string
+  description: string
+  createdAt: Date
+  updatedAt: Date
+  id: number
+}
+
 routes.get('/question/:id', (req, res) => {
   const id = req.params.id
   Ask.findOne({
     where: { id },
   }).then((question) => {
-    if (question != undefined) res.render('pages/question', { question })
-    else res.redirect('/')
+    if (question != undefined) {
+      Answers.findAll({
+        where: { questionId: id },
+        order: [['id', 'desc']],
+      }).then((answers) => {
+        res.render('pages/question', { question, answers })
+      })
+    } else res.redirect('/')
   })
 })
 
