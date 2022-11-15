@@ -23,14 +23,6 @@ routes.post('/send/question', (req, res) => {
   }).then(() => res.redirect('/'))
 })
 
-interface Iquestion {
-  title: string
-  description: string
-  createdAt: Date
-  updatedAt: Date
-  id: number
-}
-
 routes.get('/question/:id', (req, res) => {
   const id = req.params.id
   Ask.findOne({
