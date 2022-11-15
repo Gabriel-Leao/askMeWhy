@@ -6,6 +6,14 @@
     <h1><%= question.title%></h1>
     <p><%= question.description %></p>
     <hr>
+
+    <form action="/send/answer" method="post">
+      <h3>Responda</h3>
+      <label for="body">Resposta:</label>
+      <textarea placeholder="Digite a sua resposta" class="form-control py-2" id="body" name="body"></textarea>
+      <input type="text" name="questionId" id="" value="<%= question.id %>" hidden>
+      <button type="submit" class="btn btn-primary my-2 py-2" id="send-answer-btn">Responder</button>
+    </form>
   </div>
 </body>
 <%- include('../../partials/footer/index'); %>

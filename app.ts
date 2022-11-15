@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import { connection } from './controllers/connection'
 import { routes } from './routes'
+import Answers from './models/Answer'
 
 const app = express()
 

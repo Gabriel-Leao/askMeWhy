@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import Ask from '../models/Ask'
+import Answers from '../models/Answer'
 
 export const routes = Router()
 
@@ -19,9 +20,7 @@ routes.post('/send/question', (req, res) => {
   Ask.create({
     title,
     description,
-  }).then(() => {
-    res.redirect('/')
-  })
+  }).then(() => res.redirect('/'))
 })
 
 routes.get('/question/:id', (req, res) => {
@@ -29,10 +28,16 @@ routes.get('/question/:id', (req, res) => {
   Ask.findOne({
     where: { id },
   }).then((question) => {
-    if (question != undefined) {
-      res.render('pages/question', { question })
-    } else {
-      res.redirect('/')
-    }
+    if (question != undefined) res.render('pages/question', { question })
+    else res.redirect('/')
   })
+})
+
+routes.post('/send/answer', (req, res) => {
+  const body = req.body.body
+  const questionId = req.body.questionId
+  Answers.create({
+    body,
+    questionId,
+  }).then(() => res.redirect(`/question/${questionId}`))
 })
