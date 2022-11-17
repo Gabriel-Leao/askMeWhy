@@ -2,7 +2,7 @@ import { Router } from 'express'
 import Ask from '../models/Ask'
 import Answers from '../models/Answer'
 
-export const routes = Router()
+const routes = Router()
 
 routes.get('/', (req, res) => {
   Ask.findAll({ raw: true, order: [['id', 'desc']] }).then((asks) => {
@@ -47,3 +47,5 @@ routes.post('/send/answer', (req, res) => {
     questionId,
   }).then(() => res.redirect(`/question/${questionId}`))
 })
+
+export default routes

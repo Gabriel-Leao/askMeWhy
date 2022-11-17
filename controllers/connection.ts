@@ -1,11 +1,13 @@
 import { Sequelize } from 'sequelize'
 
-export const connection = new Sequelize(
+const connection = new Sequelize(
   'askMeWhy',
-  'leao',
-  'Cabecadequeijo19',
+  'aguaturbia',
+  '6ZAXybvoWgXUhWFhwMWc',
   {
-    host: '127.0.0.1',
+    host: 'ask-project.c8cvzmg6vysb.us-east-1.rds.amazonaws.com',
     dialect: 'mysql',
   }
 )
+
+export default connection
