@@ -1,11 +1,12 @@
 import { Sequelize } from 'sequelize'
+import 'dotenv/config'
 
 const connection = new Sequelize(
-  'askMeWhy',
+  process.env.DB_NAME ? process.env.DB_NAME : '',
   'aguaturbia',
-  '6ZAXybvoWgXUhWFhwMWc',
+  process.env.DB_PASS,
   {
-    host: 'ask-project.c8cvzmg6vysb.us-east-1.rds.amazonaws.com',
+    host: process.env.DB_URI,
     dialect: 'mysql',
   }
 )

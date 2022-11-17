@@ -15,13 +15,13 @@ try {
   console.error('Unable to connect to the database:', error)
 }
 
-Ask.sync({ force: false })
-  .then(() => console.log('Ask table successful created'))
-  .catch((error: Error) => console.log(error.name))
+// Ask.sync({ force: false })
+//   .then(() => console.log('Ask table successful created'))
+//   .catch((error: Error) => console.log(error.name))
 
-Answers.sync({ force: false })
-  .then(() => console.log('Answers table successful created'))
-  .catch((error: Error) => console.log(error.name))
+// Answers.sync({ force: false })
+//   .then(() => console.log('Answers table successful created'))
+//   .catch((error: Error) => console.log(error.name))
 
 app.set('view engine', 'ejs')
 
