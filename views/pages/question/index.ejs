@@ -9,8 +9,8 @@
 
     <form action="/send/answer" method="post">
       <h3>Responda</h3>
-      <label for="body">Resposta:</label>
-      <textarea placeholder="Digite a sua resposta" class="form-control py-2" id="body" name="body"></textarea>
+      <label for="answer">Resposta:</label>
+      <textarea placeholder="Digite a sua resposta" class="form-control py-2" id="answer" name="answer"></textarea>
       <input type="text" name="questionId" id="" value="<%= question.id %>" hidden>
       <button type="submit" class="btn btn-primary my-2 py-2" id="send-answer-btn">Responder</button>
     </form>
@@ -21,7 +21,7 @@
     <% answers.forEach((answer) => { %>
       <div class="card my-2">
         <div class="card-body">
-          <p><%= answer.body%></p>
+          <pre><%= answer.body%></pre>
         </div>
       </div>
     <% }) %>

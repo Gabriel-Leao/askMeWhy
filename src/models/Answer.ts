@@ -1,5 +1,5 @@
 import { INTEGER, TEXT } from 'sequelize'
-import connection from '../controllers/connection'
+import connection from '../config/db.config'
 
 const Answers = connection.define('answers', {
   body: {
